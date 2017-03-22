@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_favorites"
+        icon="@drawable/yoga_nav_bar"
+        title="Cwiczenia"
+        barColorWhenSelected="#03A9F4"/>
+    <tab
+        id="@+id/tab_nearby"
+        icon="@drawable/dieta_nav_bar"
+        title="Dieta"
+        barColorWhenSelected="#F44336"/>
+    <tab
+        id="@+id/tab_friends"
+        icon="@drawable/measuring_nav_bar"
+        title="Pomiary"
+        barColorWhenSelected="#4CAF50"/>
+    <!--<tab-->
+        <!--id="@+id/tab_friends2"-->
+        <!--icon="@drawable/ic_action_history"-->
+        <!--title="Friends"-->
+        <!--barColorWhenSelected="#00FFFF"/>-->
+    <!--<tab-->
+        <!--id="@+id/tab_friends3"-->
+        <!--icon="@drawable/ic_action_history"-->
+        <!--title="Friends"-->
+        <!--barColorWhenSelected="#FF00FF"/>-->
+</tabs>

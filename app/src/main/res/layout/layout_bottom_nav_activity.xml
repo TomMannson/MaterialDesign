@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.activity.MainActivity"
+    >
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+        >
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+
+            />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <FrameLayout
+            android:id="@+id/bottom_nav_activity_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+        <com.roughike.bottombar.BottomBar
+            android:id="@+id/bottom_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            app:bb_behavior="shifting|shy"
+            app:bb_showShadow="true"
+            app:bb_tabXmlResource="@xml/bottom_navbar"
+        />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/newFitnessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimaryFitness"
+            app:layout_behavior="app.tommanson.goandfit.utils.behaviors.FabNavigationBehavior"
+        />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/newMealButton"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimaryMeals"
+            app:layout_behavior="app.tommanson.goandfit.utils.behaviors.FabNavigationBehavior"
+        />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/newMeasurementButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimaryMeasure"
+            app:layout_behavior="app.tommanson.goandfit.utils.behaviors.FabNavigationBehavior"
+        />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

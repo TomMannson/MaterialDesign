@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pl.tommmannson.materialdesign.controls.FloatingActionMenu
+    android:id="@+id/activityShowCar_fab_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:clipChildren="false"
+    android:gravity="center_horizontal|bottom">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/activityShowCar_main_fab_layout"
+        android:layout_centerHorizontal="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_manual_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:rippleColor="?colorPrimary"
+            app:srcCompat="@drawable/measuring_nav_bar"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/activityShowCar_main_fab_layout"
+        android:layout_centerHorizontal="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_bluetooth_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/measuring_nav_bar"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/action_location_on_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/activityShowCar_main_fab_layout"
+        android:layout_centerHorizontal="true"
+        android:onClick="onBeaconClick"
+      >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_location_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:src="@drawable/measuring_nav_bar"
+            app:fabSize="mini"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/activityShowCar_main_fab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+        >
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/activityShowCar_fab_main2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="8dp"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="normal"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/measuring_nav_bar"/>
+        </FrameLayout>
+    </RelativeLayout>
+</pl.tommmannson.materialdesign.controls.FloatingActionMenu>

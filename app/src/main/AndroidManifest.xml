@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="pl.tommmannson.materialdesign"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="pl.tommmannson.materialdesign.ui.SlidingHeaderActivity">
+
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.StickyHeaderActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.BottomNavigationActivity"
+                  android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.BottomSheetActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.ButtonsActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.FabActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.FabMenuActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.FabTransformationsActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.FabTransformationsCardActivity">
+        </activity>
+    </application>
+
+</manifest>

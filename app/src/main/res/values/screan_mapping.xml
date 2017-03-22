@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="mapping_screans">
+        <item>SlidingHeaderActivity</item>
+        <item>StickyHeaderActivity</item>
+        <item>BottomNavigationActivity</item>
+        <item>BottomSheetActivity</item>
+        <item>ButtonsActivity</item>
+        <item>FabActivity</item>
+        <item>FabMenuActivity</item>
+        <item>FabTransformationsActivity</item>
+        <item>FabTransformationsCardActivity</item>
+    </array>
+
+    <array name="mapping_screans_names">
+        <item>Sliding Header</item>
+        <item>Sticky Header</item>
+        <item>Bottom NavigationActivity</item>
+        <item>Bottom Sheet</item>
+        <item>Buttons Examples</item>
+        <item>Floating Action Button</item>
+        <item>Floating Action Menu</item>
+        <item>Fab to Toolbar</item>
+        <item>Fab to Card</item>
+    </array>
+
+</resources>
