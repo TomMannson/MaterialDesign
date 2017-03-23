@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,7 +21,7 @@
                 android:layout_height="38dp"
                 android:layout_centerVertical="true"
                 android:background="@drawable/new_reservation_section"
-                android:backgroundTint="@color/colorAlert"
+                app:backgroundTint="@color/colorAlert"
                 android:gravity="center"
                 android:textAllCaps="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"

@@ -19,6 +19,7 @@ public class FabTransformationsCardActivity extends AppCompatActivity implements
 
     View toolbarFooter;
     FloatingActionButton fab;
+    View overLay;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,19 +27,36 @@ public class FabTransformationsCardActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_fab_to_card_examples);
 
         toolbarFooter = findViewById(R.id.sheet);
+        overLay = findViewById(R.id.overlay);
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        Button button1 = (Button) findViewById(R.id.button_1);
-        Button button2 = (Button) findViewById(R.id.button_2);
-        Button button3 = (Button) findViewById(R.id.button_3);
+//        Button button1 = (Button) findViewById(R.id.button_1);
+//        Button button2 = (Button) findViewById(R.id.button_2);
+//        Button button3 = (Button) findViewById(R.id.button_3);
 
-        button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
-        button3.setOnClickListener(this);
+        fab.setOnClickListener(this);
+//        button2.setOnClickListener(this);
+//        button3.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         FabTransformation.with(fab)
+                .setOverlay(overLay)
+                .duration(1000)
                 .transformTo(toolbarFooter);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(toolbarFooter.getVisibility() == View.VISIBLE) {
+            FabTransformation.with(fab)
+                    .setOverlay(overLay)
+                    .duration(1000)
+                    .transformFrom(toolbarFooter);
+        }
+        else{
+            super.onBackPressed();
+        }
     }
 }

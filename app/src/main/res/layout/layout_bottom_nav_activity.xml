@@ -29,12 +29,24 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <FrameLayout
-            android:id="@+id/bottom_nav_activity_content"
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/ipsum"
+
+            />
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <!--<FrameLayout-->
+            <!--android:id="@+id/bottom_nav_activity_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+        <!--/>-->
 
         <com.roughike.bottombar.BottomBar
             android:id="@+id/bottom_nav_bar"
@@ -55,38 +67,38 @@
             android:layout_marginBottom="70dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
-            android:visibility="gone"
+            android:visibility="visible"
             app:backgroundTint="@color/colorPrimaryFitness"
-            app:layout_behavior="app.tommanson.goandfit.utils.behaviors.FabNavigationBehavior"
+            app:layout_behavior="pl.tommmannson.materialdesign.utils.FabNavigationBehavior"
         />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/newMealButton"
-            style="@style/Widget.Design.FloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="70dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:visibility="gone"
-            app:backgroundTint="@color/colorPrimaryMeals"
-            app:layout_behavior="app.tommanson.goandfit.utils.behaviors.FabNavigationBehavior"
-        />
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/newMealButton"-->
+            <!--style="@style/Widget.Design.FloatingActionButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom|end"-->
+            <!--android:layout_marginBottom="70dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:clickable="true"-->
+            <!--android:visibility="gone"-->
+            <!--app:backgroundTint="@color/colorPrimaryMeals"-->
+            <!--app:layout_behavior="pl.tommmannson.materialdesign.utils.FabNavigationBehavior"-->
+        <!--/>-->
 
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/newMeasurementButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="70dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:visibility="gone"
-            app:backgroundTint="@color/colorPrimaryMeasure"
-            app:layout_behavior="app.tommanson.goandfit.utils.behaviors.FabNavigationBehavior"
-        />
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/newMeasurementButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom|end"-->
+            <!--android:layout_marginBottom="70dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:clickable="true"-->
+            <!--android:visibility="gone"-->
+            <!--app:backgroundTint="@color/colorPrimaryMeasure"-->
+            <!--app:layout_behavior="pl.tommmannson.materialdesign.utils.FabNavigationBehavior"-->
+        <!--/>-->
 
 
     </android.support.design.widget.CoordinatorLayout>

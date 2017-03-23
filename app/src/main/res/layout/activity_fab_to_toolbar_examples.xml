@@ -6,50 +6,50 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="24dp">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:paddingTop="24dp">-->
 
-            <Button
-                android:id="@+id/button_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button 1"
-                android:padding="16dp"
-                android:layout_margin="8dp"
-                android:textColor="@android:color/white"
-                android:background="@android:color/holo_green_dark"/>
+            <!--<Button-->
+                <!--android:id="@+id/button_1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Button 1"-->
+                <!--android:padding="16dp"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@android:color/holo_green_dark"/>-->
 
-            <Button
-                android:id="@+id/button_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:layout_margin="8dp"
-                android:text="Button 2"
-                android:textColor="@android:color/white"
-                android:background="@android:color/holo_blue_light"/>
+            <!--<Button-->
+                <!--android:id="@+id/button_2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="16dp"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:text="Button 2"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@android:color/holo_blue_light"/>-->
 
-            <Button
-                android:id="@+id/button_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:layout_margin="8dp"
-                android:text="Button 3"
-                android:textColor="@android:color/white"
-                android:background="@android:color/holo_red_dark"/>
+            <!--<Button-->
+                <!--android:id="@+id/button_3"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="16dp"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:text="Button 3"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@android:color/holo_red_dark"/>-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
-    </ScrollView>
+    <!--</ScrollView>-->
 
 
     <RelativeLayout
@@ -63,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:backgroundTint="?colorPrimary"
             android:layout_margin="16dp"
             app:borderWidth="0dp" />
 

@@ -10,6 +10,7 @@
         <item>FabMenuActivity</item>
         <item>FabTransformationsActivity</item>
         <item>FabTransformationsCardActivity</item>
+        <item>CardDemoActivity</item>
     </array>
 
     <array name="mapping_screans_names">
@@ -22,6 +23,7 @@
         <item>Floating Action Menu</item>
         <item>Fab to Toolbar</item>
         <item>Fab to Card</item>
+        <item>Card Demo</item>
     </array>
 
 </resources>

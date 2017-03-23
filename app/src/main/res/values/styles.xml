@@ -45,6 +45,10 @@
         <item name="colorControlHighlight">#0f0</item>
     </style>
 
+    <style name="AppTheme.RedButton">
+        <item name="colorButtonNormal">@color/colorAlert</item>
+    </style>
+
     <style name="AppTheme.YellowButton">
         <item name="colorButtonNormal">#ff0</item>
     </style>

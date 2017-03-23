@@ -27,18 +27,27 @@ public class FabTransformationsActivity extends AppCompatActivity implements Vie
 
         toolbarFooter = findViewById(R.id.toolbar_footer);
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        Button button1 = (Button) findViewById(R.id.button_1);
-        Button button2 = (Button) findViewById(R.id.button_2);
-        Button button3 = (Button) findViewById(R.id.button_3);
 
-        button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
-        button3.setOnClickListener(this);
+        fab.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         FabTransformation.with(fab)
+                .duration(600)
                 .transformTo(toolbarFooter);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(toolbarFooter.getVisibility() == View.VISIBLE) {
+            FabTransformation.with(fab)
+                    .duration(600)
+                    .transformFrom(toolbarFooter);
+        }
+        else{
+            super.onBackPressed();
+        }
     }
 }

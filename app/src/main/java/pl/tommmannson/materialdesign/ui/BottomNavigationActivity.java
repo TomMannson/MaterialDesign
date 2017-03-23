@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.roughike.bottombar.BottomBar;
@@ -17,7 +19,7 @@ import pl.tommmannson.materialdesign.R;
 /**
  * Created by tomasz.krol on 2016-09-15.
  */
-public class BottomNavigationActivity extends AppCompatActivity implements OnTabSelectListener {
+public class BottomNavigationActivity extends AppCompatActivity implements OnTabSelectListener, View.OnClickListener {
     @Override
     public void onTabSelected(@IdRes int tabId) {
 
@@ -36,15 +38,21 @@ public class BottomNavigationActivity extends AppCompatActivity implements OnTab
         setContentView(R.layout.layout_bottom_nav_activity);
 
         navbar = (BottomBar) findViewById(R.id.bottom_nav_bar);
-        content = (FrameLayout) findViewById(R.id.bottom_nav_activity_content);
+//        content = (FrameLayout) findViewById(R.id.bottom_nav_activity_content);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        newFitnessButton = (FloatingActionButton) findViewById(R.id.newFitnessButton);
+        newFitnessButton = (FloatingActionButton) findViewById(R.id.newFitnessButton);
 //        newMealButton = (FloatingActionButton) findViewById(R.id.newMealButton);
 //        newMeasureButton = (FloatingActionButton) findViewById(R.id.newMeasurementButton);
         setSupportActionBar(toolbar);
 //        toolbar.setNavigationIcon(R.drawable.gofit_icon);
 
         navbar.setOnTabSelectListener(this);
+        newFitnessButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Snackbar.make(v, "Snackbarr message", Snackbar.LENGTH_LONG).show();
     }
 //
 //    public void setContentNested(@LayoutRes int layout) {
