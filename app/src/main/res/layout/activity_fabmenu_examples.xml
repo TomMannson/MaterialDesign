@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <include android:id="@+id/fab_menu" layout="@layout/include_action_menu"/>
+    <include android:id="@+id/fab_menu" layout="@layout/include_action_menu2"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

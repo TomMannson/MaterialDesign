@@ -12,11 +12,7 @@
 
         </activity>
         <activity android:name="pl.tommmannson.materialdesign.ui.StartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name="pl.tommmannson.materialdesign.ui.StickyHeaderActivity">
         </activity>
@@ -36,6 +32,17 @@
         <activity android:name="pl.tommmannson.materialdesign.ui.FabTransformationsCardActivity">
         </activity>
         <activity android:name="pl.tommmannson.materialdesign.ui.CardDemoActivity">
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.SplashScreenActivity"
+                  android:theme="@style/AppThemeNoActionBar"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="pl.tommmannson.materialdesign.ui.CategoryActivity">
+
         </activity>
     </application>
 

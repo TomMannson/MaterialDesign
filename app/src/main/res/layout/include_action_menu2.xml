@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pl.tommmannson.materialdesign.controls.FloatingActionMenu
+    android:id="@+id/activityShowCar_fab_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:clipChildren="false"
+    android:gravity="center_horizontal|bottom"
+    android:tint="@android:color/white"
+    app:iconDrawable="@drawable/dieta_nav_bar"
+    app:backgroundColor="@color/colorAccent"
+>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_manual_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:rippleColor="?colorPrimary"
+            app:srcCompat="@drawable/measuring_nav_bar"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_bluetooth_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/measuring_nav_bar"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_location_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:src="@drawable/measuring_nav_bar"
+            app:fabSize="mini"/>
+
+</pl.tommmannson.materialdesign.controls.FloatingActionMenu>

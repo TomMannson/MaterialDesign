@@ -13,6 +13,19 @@
         <item>CardDemoActivity</item>
     </array>
 
+    <integer-array name="mapping_screans_category">
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>5</item>
+    </integer-array>
+
     <array name="mapping_screans_names">
         <item>Sliding Header</item>
         <item>Sticky Header</item>
@@ -24,6 +37,35 @@
         <item>Fab to Toolbar</item>
         <item>Fab to Card</item>
         <item>Card Demo</item>
+    </array>
+
+
+
+    <integer-array name="category">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
+
+    <array name="category_names_id">
+        <item>Bottom Navigation</item>
+        <item>Bottom Sheets</item>
+        <item>Buttons</item>
+        <item>Floating Action Button</item>
+        <item>Cards</item>
+        <item>Chips</item>
+    </array>
+
+    <array name="category_image_id">
+        <item>@drawable/bottom_navigation_category</item>
+        <item>@drawable/bottom_sheets_category</item>
+        <item>@drawable/buttons_category</item>
+        <item>@drawable/fab_category</item>
+        <item>@drawable/cards_category</item>
+        <item>@drawable/chips_category</item>
     </array>
 
 </resources>

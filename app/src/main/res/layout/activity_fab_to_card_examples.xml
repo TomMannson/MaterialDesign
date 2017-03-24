@@ -12,40 +12,40 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical"-->
-            <!--android:paddingTop="24dp">-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:paddingTop="24dp">-->
 
-            <!--<Button-->
-                <!--android:id="@+id/button_1"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Button 1"-->
-                <!--android:padding="16dp"-->
-                <!--android:layout_margin="8dp"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:background="@android:color/holo_green_dark"/>-->
+        <!--<Button-->
+        <!--android:id="@+id/button_1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Button 1"-->
+        <!--android:padding="16dp"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:background="@android:color/holo_green_dark"/>-->
 
-            <!--<Button-->
-                <!--android:id="@+id/button_2"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:padding="16dp"-->
-                <!--android:layout_margin="8dp"-->
-                <!--android:text="Button 2"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:background="@android:color/holo_blue_light"/>-->
+        <!--<Button-->
+        <!--android:id="@+id/button_2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="16dp"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:text="Button 2"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:background="@android:color/holo_blue_light"/>-->
 
-            <!--<Button-->
-                <!--android:id="@+id/button_3"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:padding="16dp"-->
-                <!--android:layout_margin="8dp"-->
-                <!--android:text="Button 3"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:background="@android:color/holo_red_dark"/>-->
+        <!--<Button-->
+        <!--android:id="@+id/button_3"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="16dp"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:text="Button 3"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:background="@android:color/holo_red_dark"/>-->
 
         <!--</LinearLayout>-->
 
@@ -62,7 +62,7 @@
             android:layout_height="match_parent"
             android:background="#aaa"
             android:clickable="true"
-            android:visibility="gone" />
+            android:visibility="gone"/>
 
         <!-- Any Fab is OK. (Third party library, your custom view and so on) -->
         <android.support.design.widget.FloatingActionButton
@@ -72,75 +72,80 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_margin="16dp"
-            app:borderWidth="0dp" />
+            app:borderWidth="0dp"/>
 
         <!-- You must wrap transform view in Circular reveal container -->
         <io.codetail.widget.RevealFrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/sheet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
                 android:layout_gravity="end"
                 android:layout_margin="16dp"
+                android:visibility="invisible"
                 app:cardElevation="2dp">
 
-                <LinearLayout
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                    <include
-                        android:id="@+id/row_1"
-                        layout="@layout/part_sheet_list" />
+                <ScrollView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                    <include
-                        android:id="@+id/row_2"
-                        layout="@layout/part_sheet_list" />
+                        <include
+                            android:id="@+id/row_1"
+                            layout="@layout/part_sheet_list"/>
 
-                    <!--<include-->
+                        <include
+                            android:id="@+id/row_2"
+                            layout="@layout/part_sheet_list"/>
+
+                        <!--<include-->
                         <!--android:id="@+id/row_3"-->
                         <!--layout="@layout/part_sheet_list" />-->
 
-                    <include
-                        android:id="@+id/row_4"
-                        layout="@layout/part_sheet_list" />
+                        <include
+                            android:id="@+id/row_4"
+                            layout="@layout/part_sheet_list"/>
 
-                    <RelativeLayout
-                        android:id="@+id/row_5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#fff"
-                        android:paddingBottom="@dimen/spacing_small"
-                        android:paddingLeft="@dimen/spacing"
-                        android:paddingRight="@dimen/spacing"
-                        android:paddingTop="@dimen/spacing_small">
-
-                        <ImageView
-                            android:id="@+id/img_icon"
-                            android:layout_width="@dimen/img_thumb"
-                            android:layout_height="@dimen/img_thumb"
-                            android:scaleType="center"
-                            android:background="@android:color/black"
-                        />
-
-                        <TextView
-                            android:id="@+id/txt_title"
+                        <RelativeLayout
+                            android:id="@+id/row_5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="@dimen/spacing"
-                            android:layout_toRightOf="@id/img_icon"
-                            android:text="Compose New" />
+                            android:background="#fff"
+                            android:paddingBottom="@dimen/spacing_small"
+                            android:paddingLeft="@dimen/spacing"
+                            android:paddingRight="@dimen/spacing"
+                            android:paddingTop="@dimen/spacing_small">
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:id="@+id/img_icon"
+                                android:layout_width="@dimen/img_thumb"
+                                android:layout_height="@dimen/img_thumb"
+                                android:background="@android:color/black"
+                                android:scaleType="center"
+                            />
 
-                </LinearLayout>
+                            <TextView
+                                android:id="@+id/txt_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/spacing"
+                                android:layout_toRightOf="@id/img_icon"
+                                android:text="Compose New"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
 
             </android.support.v7.widget.CardView>
 

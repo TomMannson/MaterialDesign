@@ -4,20 +4,37 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.os.Build;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 
 public class FabAnimatorLollipop extends FabAnimator {
 
+
+
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     final void revealOff(final View fab, final View transformView, final RevealCallback callback, int gravity) {
-        Animator animator = ViewAnimationUtils.createCircularReveal(
-                transformView,
-                transformView.getWidth() / 2,
-                transformView.getHeight() / 2,
-                (float) Math.hypot(transformView.getWidth(), transformView.getHeight()) / 2 * FAB_SCALE,
-                fab.getWidth() / 2 * FAB_SCALE);
+
+        FAB_SCALE = Math.max(0.7f,
+                Math.min(transformView.getWidth() * 1.0f / fab.getWidth(), transformView.getHeight() / fab.getWidth()) * 0.5f);
+        Animator animator = null;
+        if(gravity == Gravity.LEFT || gravity == Gravity.RIGHT){
+            animator = ViewAnimationUtils.createCircularReveal(
+                    transformView,
+                    gravity == Gravity.LEFT ? fab.getWidth()  :transformView.getWidth() - fab.getWidth(),
+                    transformView.getHeight() / 2,
+                    (float) Math.max(transformView.getWidth(), transformView.getHeight()),
+                    fab.getWidth() / 2 * FAB_SCALE);
+        }
+        else {
+            animator = ViewAnimationUtils.createCircularReveal(
+                    transformView,
+                    transformView.getWidth() / 2,
+                    transformView.getHeight() / 2,
+                    (float) Math.hypot(transformView.getWidth(), transformView.getHeight()) / 2 * FAB_SCALE,
+                    fab.getWidth() / 2 * FAB_SCALE);
+        }
         animator.setInterpolator(REVEAL_INTERPOLATOR);
         animator.addListener(new Animator.AnimatorListener() {
             @Override
@@ -50,12 +67,23 @@ public class FabAnimatorLollipop extends FabAnimator {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     final void revealOn(final View fab, View transformView, final RevealCallback callback, int gravity) {
-        Animator animator = ViewAnimationUtils.createCircularReveal(
-                transformView,
-                transformView.getWidth() / 2,
-                transformView.getHeight() / 2,
-                fab.getWidth() / 2,
-                (float) Math.hypot(transformView.getWidth(), transformView.getHeight()) / 2);
+        Animator animator = null;
+        if(gravity == Gravity.LEFT || gravity == Gravity.RIGHT){
+            animator = ViewAnimationUtils.createCircularReveal(
+                    transformView,
+                    gravity == Gravity.LEFT ? 0 :transformView.getWidth() / 2,
+                    transformView.getHeight() / 2,
+                    fab.getWidth() / 2 * FAB_SCALE,
+                    (float) Math.max(transformView.getWidth(), transformView.getHeight()));
+        }
+        else{
+            animator = ViewAnimationUtils.createCircularReveal(
+                    transformView,
+                    transformView.getWidth() / 2,
+                    transformView.getHeight() / 2,
+                    fab.getWidth() / 2 * FAB_SCALE,
+                    (float) Math.hypot(transformView.getWidth(), transformView.getHeight()) / 2);
+        }
         transformView.setVisibility(View.VISIBLE);
         animator.setInterpolator(REVEAL_INTERPOLATOR);
         animator.addListener(new Animator.AnimatorListener() {
@@ -89,6 +117,7 @@ public class FabAnimatorLollipop extends FabAnimator {
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     final void fabMoveOut(final View fab, final View transformView, final FabAnimationCallback callback, int gravity) {
+        //FAB_SCALE = Math.min(transformView.getWidth() * 1.0f / fab.getWidth(), transformView.getHeight() / fab.getWidth()) * 0.5f;
         fab.animate()
                 .scaleX(1)
                 .scaleY(1)
@@ -124,11 +153,13 @@ public class FabAnimatorLollipop extends FabAnimator {
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     final void fabMoveIn(final View fab, View transformView, final FabAnimationCallback callback, int gravity) {
+        FAB_SCALE = Math.max(0.7f,
+                Math.min(transformView.getWidth() * 1.0f / fab.getWidth(), transformView.getHeight() / fab.getWidth()) * 0.5f);
         fab.animate()
                 .scaleX(FAB_SCALE)
                 .scaleY(FAB_SCALE)
                 .alpha(0.2f)
-                .translationX(getTranslationX(fab, transformView))
+                .translationX(getTranslationX(fab, transformView, gravity))
                 .translationY(getTranslationY(fab, transformView))
                 .setInterpolator(FAB_INTERPOLATOR)
                 .setDuration(getRevealAnimationDuration())

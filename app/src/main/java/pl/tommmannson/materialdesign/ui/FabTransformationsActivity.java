@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
@@ -34,6 +35,7 @@ public class FabTransformationsActivity extends AppCompatActivity implements Vie
     @Override
     public void onClick(View v) {
         FabTransformation.with(fab)
+                .setGravity(Gravity.RIGHT)
                 .duration(600)
                 .transformTo(toolbarFooter);
     }
@@ -43,6 +45,7 @@ public class FabTransformationsActivity extends AppCompatActivity implements Vie
 
         if(toolbarFooter.getVisibility() == View.VISIBLE) {
             FabTransformation.with(fab)
+                    .setGravity(Gravity.RIGHT)
                     .duration(600)
                     .transformFrom(toolbarFooter);
         }

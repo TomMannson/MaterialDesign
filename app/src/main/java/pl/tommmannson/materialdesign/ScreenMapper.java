@@ -10,7 +10,7 @@ public class ScreenMapper {
 
     String[] screenNames = new String[0];
 
-    public ScreenMapper(Context ctx){
+    public ScreenMapper(Context ctx, int categoryId){
         screenNames = ctx.getResources().getStringArray(R.array.mapping_screans);
     }
 

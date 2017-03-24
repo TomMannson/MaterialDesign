@@ -1,5 +1,6 @@
 package com.konifar.fab_transformation.animation;
 
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
@@ -10,7 +11,7 @@ import com.konifar.fab_transformation.FabTransformation;
 
 public abstract class FabAnimator {
 
-    static final float FAB_SCALE = 3.2f;
+    float FAB_SCALE = 3.2f;
     static final Interpolator REVEAL_INTERPOLATOR = new DecelerateInterpolator();
     static final Interpolator FAB_INTERPOLATOR = new AccelerateInterpolator();
     static final Interpolator OVERLAY_INTERPOLATOR = new AccelerateDecelerateInterpolator();
@@ -141,7 +142,25 @@ public abstract class FabAnimator {
         return transformViewX - fabX;
     }
 
+    int getTranslationX(View fab, View transformView, int gravity) {
+        if(gravity == Gravity.RIGHT || gravity == Gravity.LEFT){
+            return gravity == Gravity.LEFT ? transformView.getLeft() - fab.getLeft() + fab.getWidth()
+                    : transformView.getRight() - fab.getRight() - fab.getWidth();
+        }
+        else {
+            int fabX = ViewUtil.getRelativeLeft(fab) + fab.getWidth() / 2;
+            int transformViewX = ViewUtil.getRelativeLeft(transformView) + transformView.getWidth() / 2;
+            return transformViewX - fabX;
+        }
+    }
+
     int getTranslationY(View fab, View transformView) {
+        int fabY = ViewUtil.getRelativeTop(fab) + fab.getHeight() / 2;
+        int transformViewY = ViewUtil.getRelativeTop(transformView) + transformView.getHeight() / 2;
+        return transformViewY - fabY;
+    }
+
+    int getTranslationY(View fab, View transformView, int gravity) {
         int fabY = ViewUtil.getRelativeTop(fab) + fab.getHeight() / 2;
         int transformViewY = ViewUtil.getRelativeTop(transformView) + transformView.getHeight() / 2;
         return transformViewY - fabY;

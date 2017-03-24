@@ -4,9 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -41,26 +45,32 @@ public class FloatingActionMenu extends RelativeLayout implements View.OnClickLi
     private OnClickListener mOnClickListener = null;
 
     private boolean mBlocked = false;
+    private ColorStateList backgroudColor;
+    private Drawable iconDrawable;
+    private int iconColor;
+    private boolean sideLabelEnable;
+    private FloatingActionButton[] fabs;
+    private boolean initialPass = true;
 
     public FloatingActionMenu(Context context) {
         super(context);
 //        setSpaceBaseOnDensity(context);
         initAnimation(context);
-        init();
+        init(context, null);
     }
 
     public FloatingActionMenu(Context context, AttributeSet attrs) {
         super(context, attrs);
 //        setSpaceBaseOnDensity(context);
         initAnimation(context);
-        init();
+        init(context, attrs);
     }
 
     public FloatingActionMenu(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 //        setSpaceBaseOnDensity(context);
         initAnimation(context);
-        init();
+        init(context, attrs);
     }
 
     private void setSpaceBaseOnDensity(Context context) {
@@ -88,9 +98,49 @@ public class FloatingActionMenu extends RelativeLayout implements View.OnClickLi
         }
     }
 
-    public void initAnimation(Context ctx) {
+    private void initAnimation(Context ctx) {
         mRotateForward = AnimationUtils.loadAnimation(ctx, R.anim.rotate_forward);
         mRotateBackward = AnimationUtils.loadAnimation(ctx, R.anim.rotate_backward);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+//        removeAllViews();
+
+
+
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if(initialPass) {
+            initialPass = false;
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+
+            fabs = new FloatingActionButton[getChildCount()];
+            for(int i = 0; i < fabs.length; i++){
+                fabs[i] = (FloatingActionButton) getChildAt(i);
+//                removeView(fabs[i]);
+            }
+
+            for(int i = 0; i < fabs.length; i++){
+                removeView(fabs[i]);
+            }
+
+//            removeAllViews();
+
+            for (int i = 0; i < fabs.length; i++){
+                ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fabmenu_minifab_container, this, false);
+                v.addView(fabs[i]);
+                addView(v);
+            }
+
+            inflater.inflate(R.layout.fabmenu_fab_main, this, true);
+        }
+
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     private void initMenuFab() {
@@ -99,15 +149,18 @@ public class FloatingActionMenu extends RelativeLayout implements View.OnClickLi
             return;
         }
         ViewGroup view = (ViewGroup) getContent().getChildAt(childCount - 1);
-        if (view.getChildCount() != 2) {
+        if (view.getChildCount() < 2) {
             return;
         }
         if (((ViewGroup) (view.getChildAt(0))).getChildCount() == 1) {
             mFloatingActionButton = (FloatingActionButton) ((ViewGroup) (view.getChildAt(0))).getChildAt(0);
             mFloatingActionButton.setOnClickListener(this);
+
+            mFloatingActionButton.setBackgroundTintList(backgroudColor);
         }
         if (((ViewGroup) (view.getChildAt(1))).getChildCount() == 1) {
             mImgView = (ImageView) ((ViewGroup) (view.getChildAt(1))).getChildAt(0);
+            mImgView.setImageDrawable(iconDrawable);
         }
     }
 
@@ -126,22 +179,44 @@ public class FloatingActionMenu extends RelativeLayout implements View.OnClickLi
         return null;
     }
 
-    private void init() {
+    private void init(Context context, AttributeSet attrs) {
+
+        initAttribures(context, attrs);
+
         getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
                 getViewTreeObserver().removeOnPreDrawListener(this);
                 initMenuFab();
-                initMiniFabs();
-                initAnimOffsets();
+                if(getChildCount() > 1) {
+                    initMiniFabs();
+                    initAnimOffsets();
+                }
                 return true;
             }
         });
+
+    }
+
+    private void initAttribures(Context context, AttributeSet attrs){
+//        int[] attrsIndex = {R.styleable.FloatingActionMenu_backgroundColor,
+//                R.styleable.FloatingActionMenu_iconDrawable, R.styleable.FloatingActionMenu_float_side_labels};
+
+        final TypedArray a = context.obtainStyledAttributes(
+                attrs, R.styleable.FloatingActionMenu, 0, 0);
+
+        backgroudColor = a.getColorStateList(R.styleable.FloatingActionMenu_backgroundColor);
+        iconColor = a.getColor(R.styleable.FloatingActionMenu_iconColor, 0xff000000);
+        sideLabelEnable = a.getBoolean(R.styleable.FloatingActionMenu_float_side_labels, false);
+        iconDrawable = a.getDrawable(R.styleable.FloatingActionMenu_iconDrawable);
+
+        a.recycle();
     }
 
     private void initMiniFabs() {
         int count = getContent().getChildCount();
         if (count == 0) {
+            mMenuMiniFabs = new View[0];
             return;
         }
         mMenuMiniFabs = new View[count - 1];
@@ -179,11 +254,15 @@ public class FloatingActionMenu extends RelativeLayout implements View.OnClickLi
         if (mExpandable) {
             mImgView.startAnimation(mRotateBackward);
 //            mImgView.setBackgroundResource(R.drawable.fab_anim_revert);
-            collapseFab();
+            if(fabs.length > 0) {
+                collapseFab();
+            }
         } else {
             mImgView.startAnimation(mRotateForward);
 //            mImgView.setBackgroundResource(R.drawable.fab_anim);
-            expandFab();
+            if(fabs.length > 0) {
+                expandFab();
+            }
         }
         mExpandable = !mExpandable;
 //        animateFab();

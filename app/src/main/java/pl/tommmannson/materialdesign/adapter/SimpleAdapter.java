@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pl.tommmannson.materialdesign.R;
 import pl.tommmannson.materialdesign.ScreenMapper;
 import pl.tommmannson.materialdesign.databinding.SimpleItemBinding;
@@ -18,12 +21,38 @@ import pl.tommmannson.materialdesign.databinding.SimpleItemBinding;
 public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.VH> {
 
     String[] names;
-    ScreenMapper mapper;
+    String[] screenNames = new String[0];
+    int[] categoryMaping = new int[0];
 
     public SimpleAdapter(Context ctx){
         names = ctx.getResources().getStringArray(R.array.mapping_screans_names);
-        mapper = new ScreenMapper(ctx);
+//        mapper = new ScreenMapper(ctx, categoryId);
 
+    }
+
+    public SimpleAdapter(Context ctx, int categoryId) {
+        names = ctx.getResources().getStringArray(R.array.mapping_screans_names);
+        categoryMaping = ctx.getResources().getIntArray(R.array.mapping_screans_category);
+        screenNames = ctx.getResources().getStringArray(R.array.mapping_screans);
+
+        List<Integer> indexOfCategory = new ArrayList<>();
+        for (int i = 0; i < categoryMaping.length; i++) {
+            if(categoryMaping[i] == categoryId){
+                indexOfCategory.add(i);
+            }
+        }
+
+        String[] filtredNames = new String[indexOfCategory.size()];
+        for (int i = 0; i < indexOfCategory.size(); i++) {
+            filtredNames[i] = names[indexOfCategory.get(i)];
+        }
+        names = filtredNames;
+
+        filtredNames = new String[indexOfCategory.size()];
+        for (int i = 0; i < indexOfCategory.size(); i++) {
+            filtredNames[i] = screenNames[indexOfCategory.get(i)];
+        }
+        screenNames = filtredNames;
     }
 
     @Override
@@ -40,7 +69,7 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.VH> {
             public void onClick(View v) {
                 try {
                     (v.getContext())
-                            .startActivity(new Intent(v.getContext(), Class.forName(mapper.getScreenClass(holder.getAdapterPosition()))));
+                            .startActivity(new Intent(v.getContext(), Class.forName(getScreenClass(holder.getAdapterPosition()))));
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -61,5 +90,12 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.VH> {
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
+
+
+    public static final String PACKAGE_IF_SCREANS = "pl.tommmannson.materialdesign.ui";
+
+    public String getScreenClass(int position){
+        return String.format("%s.%s", PACKAGE_IF_SCREANS, screenNames[position]);
     }
 }
