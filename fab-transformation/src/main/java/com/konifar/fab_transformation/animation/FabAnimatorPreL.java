@@ -13,7 +13,7 @@ import io.codetail.animation.ViewAnimationUtils;
 public class FabAnimatorPreL extends FabAnimator {
 
     @Override
-    final void revealOff(final View fab, final View transformView, final RevealCallback callback) {
+    final void revealOff(final View fab, final View transformView, final RevealCallback callback, int gravity) {
         SupportAnimator animator = ViewAnimationUtils.createCircularReveal(
                 transformView,
                 transformView.getWidth() /2 ,
@@ -51,7 +51,7 @@ public class FabAnimatorPreL extends FabAnimator {
     }
 
     @Override
-    final void revealOn(final View fab, final View transformView, final RevealCallback callback) {
+    final void revealOn(final View fab, final View transformView, final RevealCallback callback, int gravity) {
         SupportAnimator animator = ViewAnimationUtils.createCircularReveal(
                 transformView,
                 transformView.getWidth() /2 ,
@@ -89,7 +89,7 @@ public class FabAnimatorPreL extends FabAnimator {
     }
 
     @Override
-    final void fabMoveOut(final View fab, final View transformView, final FabAnimationCallback callback) {
+    final void fabMoveOut(final View fab, final View transformView, final FabAnimationCallback callback, int gravity) {
         ViewPropertyAnimator.animate(fab)
                 .scaleX(1)
                 .scaleY(1)
@@ -122,7 +122,7 @@ public class FabAnimatorPreL extends FabAnimator {
     }
 
     @Override
-    final void fabMoveIn(final View fab, final View transformView, final FabAnimationCallback callback) {
+    final void fabMoveIn(final View fab, final View transformView, final FabAnimationCallback callback, int gravity) {
         ViewPropertyAnimator.animate(fab)
                 .scaleX(FAB_SCALE)
                 .scaleY(FAB_SCALE)

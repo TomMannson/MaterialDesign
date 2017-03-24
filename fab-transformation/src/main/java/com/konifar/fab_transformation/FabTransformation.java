@@ -27,6 +27,7 @@ public class FabTransformation {
         private View overlay;
         private FabAnimator animator;
         private long duration;
+        private int gravity;
         private OnTransformListener listener;
 
         public Builder(View fab) {
@@ -45,6 +46,11 @@ public class FabTransformation {
             return this;
         }
 
+        public Builder setGravity(int gravity) {
+            this.gravity = gravity;
+            return this;
+        }
+
         public Builder setOverlay(View overlay) {
             this.overlay = overlay;
             return this;
@@ -55,7 +61,7 @@ public class FabTransformation {
                 throw new IllegalStateException("transformView is not set.");
             }
             if (fab.getVisibility() == View.VISIBLE) {
-                animator.transformTo(fab, transformView, duration, overlay, listener);
+                animator.transformTo(fab, transformView, duration, overlay, listener, gravity);
             }
         }
 
@@ -64,7 +70,7 @@ public class FabTransformation {
                 throw new IllegalStateException("transformView is not set.");
             }
             if (fab.getVisibility() != View.VISIBLE) {
-                animator.transformOut(fab, transformView, duration, overlay, listener);
+                animator.transformOut(fab, transformView, duration, overlay, listener, gravity);
             }
         }
 

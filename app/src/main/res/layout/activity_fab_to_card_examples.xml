@@ -60,6 +60,7 @@
             android:id="@+id/overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#aaa"
             android:clickable="true"
             android:visibility="gone" />
 
@@ -86,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 android:layout_gravity="end"
+                android:layout_margin="16dp"
                 app:cardElevation="2dp">
 
                 <LinearLayout

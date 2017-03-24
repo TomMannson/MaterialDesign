@@ -10,20 +10,20 @@ import com.konifar.fab_transformation.FabTransformation;
 
 public abstract class FabAnimator {
 
-    static final float FAB_SCALE = 1.2f;
+    static final float FAB_SCALE = 3.2f;
     static final Interpolator REVEAL_INTERPOLATOR = new DecelerateInterpolator();
     static final Interpolator FAB_INTERPOLATOR = new AccelerateInterpolator();
     static final Interpolator OVERLAY_INTERPOLATOR = new AccelerateDecelerateInterpolator();
     private long fabAnimationDuration;
     private long revealAnimationDuration;
 
-    abstract void fabMoveIn(View fab, View transformView, FabAnimationCallback callback);
+    abstract void fabMoveIn(View fab, View transformView, FabAnimationCallback callback, int gravity);
 
-    abstract void fabMoveOut(View fab, View transformView, FabAnimationCallback callback);
+    abstract void fabMoveOut(View fab, View transformView, FabAnimationCallback callback, int gravity);
 
-    abstract void revealOn(View fab, View transformView, RevealCallback callback);
+    abstract void revealOn(View fab, View transformView, RevealCallback callback, int gravity);
 
-    abstract void revealOff(View fab, View transformView, RevealCallback callback);
+    abstract void revealOff(View fab, View transformView, RevealCallback callback, int gravity);
 
     abstract void showOverlay(final View overlay);
 
@@ -49,7 +49,7 @@ public abstract class FabAnimator {
     }
 
     public void transformTo(final View fab, final View transformView, long duration, final View overlay,
-                            final FabTransformation.OnTransformListener listener) {
+                            final FabTransformation.OnTransformListener listener, final int gravity) {
         calculateDuration(fab, transformView, duration);
 
         fabMoveIn(fab, transformView, new FabAnimationCallback() {
@@ -71,7 +71,7 @@ public abstract class FabAnimator {
                     public void onRevealEnd() {
                         if (listener != null) listener.onEndTransform();
                     }
-                });
+                }, gravity);
             }
 
             @Override
@@ -83,11 +83,11 @@ public abstract class FabAnimator {
             public void onAnimationRepeat() {
                 //
             }
-        });
+        }, gravity);
     }
 
     public void transformOut(final View fab, final View transformView, long duration, final View overlay,
-                             final FabTransformation.OnTransformListener listener) {
+                             final FabTransformation.OnTransformListener listener, final int gravity) {
         calculateDuration(fab, transformView, duration);
 
         if (overlay != null) hideOverlay(overlay);
@@ -120,10 +120,12 @@ public abstract class FabAnimator {
                     public void onAnimationRepeat() {
                         //
                     }
-                });
+                }, gravity);
+
             }
-        });
+        },gravity);
     }
+
 
     int getCenterX(View view) {
         return view.getWidth() / 2 + view.getLeft();

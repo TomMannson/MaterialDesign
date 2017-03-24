@@ -42,7 +42,7 @@ public class FabTransformationsCardActivity extends AppCompatActivity implements
     public void onClick(View v) {
         FabTransformation.with(fab)
                 .setOverlay(overLay)
-                .duration(1000)
+                .duration(300)
                 .transformTo(toolbarFooter);
     }
 
@@ -52,7 +52,7 @@ public class FabTransformationsCardActivity extends AppCompatActivity implements
         if(toolbarFooter.getVisibility() == View.VISIBLE) {
             FabTransformation.with(fab)
                     .setOverlay(overLay)
-                    .duration(1000)
+                    .duration(300)
                     .transformFrom(toolbarFooter);
         }
         else{
