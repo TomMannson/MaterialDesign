@@ -3,7 +3,7 @@
 
     <data>
         <variable name="text" type="String"/>
-        <variable name="icon" type="Integer"/>
+        <variable name="icon" type="android.graphics.drawable.Drawable"/>
     </data>
     <android.support.v7.widget.CardView
         android:layout_height="wrap_content"
@@ -15,7 +15,8 @@
         <pl.tommmannson.materialdesign.controls.SquareImageView
             android:id="@+id/image"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:src="@{icon}"/>
 
             <!--app:srcCompat="@{icon}"-->
         />

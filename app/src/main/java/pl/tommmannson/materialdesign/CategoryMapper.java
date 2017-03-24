@@ -18,4 +18,5 @@ public class CategoryMapper {
         return categories[position];
     }
 
+
 }

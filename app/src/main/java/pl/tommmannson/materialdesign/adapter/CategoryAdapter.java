@@ -43,7 +43,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.VH> {
     @Override
     public void onBindViewHolder(final VH holder, int position) {
         holder.binding.setText(names[position]);
-        holder.binding.image.setImageDrawable(images[position]);
+        holder.binding.setIcon(images[position]);
 
         holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +53,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.VH> {
 //                            .startActivity(new Intent(v.getContext(), Class.forName(mapper.getScreenClass(holder.getAdapterPosition()))));
             }
         });
+        holder.binding.executePendingBindings();
     }
 
     @Override
