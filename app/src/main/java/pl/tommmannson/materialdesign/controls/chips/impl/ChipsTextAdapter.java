@@ -1,6 +1,5 @@
 package pl.tommmannson.materialdesign.controls.chips.impl;
 
-import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +7,6 @@ import android.view.ViewGroup;
 import pl.tommmannson.materialdesign.R;
 import pl.tommmannson.materialdesign.controls.chips.Chips;
 import pl.tommmannson.materialdesign.controls.chips.ChipsLayoutAdapter;
-import pl.tommmannson.materialdesign.controls.chips.ChipsState;
 import pl.tommmannson.materialdesign.controls.chips.DynamicChipsLayout;
 
 /**
@@ -19,7 +17,7 @@ public class ChipsTextAdapter implements ChipsLayoutAdapter {
     private final CharSequence[] items;
     DynamicChipsLayout layout;
 
-    public ChipsTextAdapter(DynamicChipsLayout layout, CharSequence[]items) {
+    public ChipsTextAdapter(DynamicChipsLayout layout, CharSequence[] items) {
         this.items = items;
         this.layout = layout;
     }
@@ -27,17 +25,6 @@ public class ChipsTextAdapter implements ChipsLayoutAdapter {
     @Override
     public int getCount() {
         return items != null ? items.length : 0;
-    }
-
-    @Override
-    public @LayoutRes int getChipsLayoutId() {
-        return R.layout.marge_chips_item;
-    }
-
-    @Override
-    public ChipsState getState(int position) {
-        return new ChipsState()
-                .setChipsText((String) items[position]);
     }
 
     @Override

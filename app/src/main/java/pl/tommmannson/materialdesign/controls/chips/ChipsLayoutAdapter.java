@@ -10,10 +10,6 @@ public interface ChipsLayoutAdapter {
 
     int getCount();
 
-    int getChipsLayoutId();
-
-    ChipsState getState(int position);
-
     Chips getView(ViewGroup parrent, int position);
 
 }
