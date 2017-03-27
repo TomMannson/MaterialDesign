@@ -44,6 +44,8 @@
         <activity android:name="pl.tommmannson.materialdesign.ui.CategoryActivity">
 
         </activity>
+        <activity android:name=".ui.ChipsDemoActivity" />
+        <activity android:name=".ui.DynamicChipsDemoActivity" />
     </application>
 
 </manifest>

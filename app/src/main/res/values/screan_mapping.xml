@@ -11,6 +11,8 @@
         <item>FabTransformationsActivity</item>
         <item>FabTransformationsCardActivity</item>
         <item>CardDemoActivity</item>
+        <item>ChipsDemoActivity</item>
+        <item>DynamicChipsDemoActivity</item>
     </array>
 
     <integer-array name="mapping_screans_category">
@@ -24,6 +26,8 @@
         <item>4</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>6</item>
     </integer-array>
 
     <array name="mapping_screans_names">
@@ -37,6 +41,8 @@
         <item>Fab to Toolbar</item>
         <item>Fab to Card</item>
         <item>Card Demo</item>
+        <item>Chips Demo</item>
+        <item>DynamicChips Demo</item>
     </array>
 
 

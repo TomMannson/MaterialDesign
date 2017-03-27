@@ -6,4 +6,22 @@
         <attr name="iconColor" format="color|reference"/>
         <attr name="float_side_labels" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="RatioImageView">
+        <attr name="ratio" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="Chips">
+        <attr name="chip_text" format="string"/>
+        <attr name="chip_text_color" format="color|reference" />
+        <attr name="chip_color" format="color"/>
+        <attr name="chip_selected" format="boolean"/>
+        <attr name="chip_color_selected" format="color"/>
+        <attr name="chip_image" format="reference" />
+        <attr name="chip_delete_enable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="DynamicChipsLayout">
+        <attr name="dynamicchips_items" format="reference"/>
+    </declare-styleable>
 </resources>

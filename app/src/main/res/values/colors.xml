@@ -6,5 +6,7 @@
 
     <color name="colorAlert">#C3261F</color>
 
+    <color name="flat_pressed">#ff000000</color>
+
 
 </resources>

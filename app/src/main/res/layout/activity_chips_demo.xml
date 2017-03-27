@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:padding="16dp"
+              android:orientation="vertical">
+
+    <pl.tommmannson.materialdesign.controls.chips.Chips
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:chip_text="@string/app_name"
+        app:chip_color_selected="@android:color/black"
+        app:chip_image="@mipmap/ic_launcher"
+        app:chip_color="@android:color/holo_blue_dark"
+        app:chip_text_color="@android:color/white"
+        android:clickable="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+
+    />
+
+</LinearLayout>

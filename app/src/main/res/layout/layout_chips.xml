@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="32dp" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/chips_ripple"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="horizontal"
+>
+
+    <pl.tommmannson.materialdesign.controls.RatioImageView
+        android:id="@+id/layout_chips_icon"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:ratio="1/1"
+        android:src="@mipmap/ic_launcher"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/layout_chips_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        tools:text="sss"
+        android:textColor="@android:color/white"
+        android:selectAllOnFocus="false"/>
+
+    <ImageView
+        android:id="@+id/layout_chips_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:background="@android:drawable/ic_menu_close_clear_cancel"
+        android:visibility="visible"
+        />
+</LinearLayout>

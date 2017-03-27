@@ -49,8 +49,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.VH> {
             @Override
             public void onClick(View v) {
                 StartActivity.start(v.getContext(), mapper.getScreenClass(holder.getAdapterPosition()));
-//                    (v.getContext())
-//                            .startActivity(new Intent(v.getContext(), Class.forName(mapper.getScreenClass(holder.getAdapterPosition()))));
             }
         });
         holder.binding.executePendingBindings();

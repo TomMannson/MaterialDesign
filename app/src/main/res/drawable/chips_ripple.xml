@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+          android:color="@color/flat_pressed"
+          android:exitFadeDuration="@android:integer/config_mediumAnimTime"
+          android:enterFadeDuration="@android:integer/config_mediumAnimTime"  >
+
+
+    <item android:drawable="@drawable/shape_chips_pressed" android:state_enabled="true"
+          android:state_pressed="true"/>
+    <item android:drawable="@drawable/shape_chips_pressed" android:state_enabled="true"
+          android:state_focused="true"/>
+    <item android:drawable="@drawable/shape_chips_pressed" android:state_enabled="true"
+          android:state_selected="true"/>
+
+
+    <item android:drawable="@drawable/shape_chips"/>
+
+</selector>
