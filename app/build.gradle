@@ -44,4 +44,8 @@ dependencies {
     provided 'javax.annotation:jsr250-api:1.0'
     apt 'com.google.dagger:dagger-compiler:2.4'
     apt 'com.google.guava:guava:19.0'
+
+    compile 'com.tommannson.viewstate:viewstateannotations:0.2.3'
+    apt 'com.tommannson.viewstate:viewstatecompiler:0.2.3'
+    compile 'com.tommannson.viewstate:viewstatecore:0.2.3'
 }
