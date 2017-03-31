@@ -23,15 +23,15 @@ public class SlidingHeaderAdapter extends SideHeadersRecyclerAdapter<SlidingHead
 
     List<GroupItemVM> items = new ArrayList<>();
 
-    public SelectItemAdapter.OnItemSelectedListener getListener() {
+    public OnItemSelectedListener getListener() {
         return listener;
     }
 
-    public void setListener(SelectItemAdapter.OnItemSelectedListener listener) {
+    public void setListener(OnItemSelectedListener listener) {
         this.listener = listener;
     }
 
-    SelectItemAdapter.OnItemSelectedListener listener;
+    OnItemSelectedListener listener;
 
     @Override
     public SlidingHeaderAdapter.VH onCreateViewHolder(ViewGroup parent, int viewType) {

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="mapping_screans">
-        <item>SlidingHeaderActivity</item>
-        <item>StickyHeaderActivity</item>
         <item>BottomNavigationActivity</item>
         <item>BottomSheetActivity</item>
         <item>ButtonsActivity</item>
@@ -13,11 +11,13 @@
         <item>CardDemoActivity</item>
         <item>ChipsDemoActivity</item>
         <item>DynamicChipsDemoActivity</item>
+
+        <item>SlidingHeaderActivity</item>
+        <item>StickyHeaderActivity</item>
     </array>
 
     <integer-array name="mapping_screans_category">
-        <item>0</item>
-        <item>0</item>
+
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -28,11 +28,13 @@
         <item>5</item>
         <item>6</item>
         <item>6</item>
+
+        <item>12</item>
+        <item>12</item>
     </integer-array>
 
     <array name="mapping_screans_names">
-        <item>Sliding Header</item>
-        <item>Sticky Header</item>
+
         <item>Bottom NavigationActivity</item>
         <item>Bottom Sheet</item>
         <item>Buttons Examples</item>
@@ -43,6 +45,9 @@
         <item>Card Demo</item>
         <item>Chips Demo</item>
         <item>DynamicChips Demo</item>
+
+        <item>Sliding Header</item>
+        <item>Sticky Header</item>
     </array>
 
 
@@ -54,6 +59,8 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
+
+        <item>12</item>
     </integer-array>
 
     <array name="category_names_id">
@@ -63,6 +70,8 @@
         <item>Floating Action Button</item>
         <item>Cards</item>
         <item>Chips</item>
+
+        <item>Lists</item>
     </array>
 
     <array name="category_image_id">
@@ -72,6 +81,7 @@
         <item>@drawable/fab_category</item>
         <item>@drawable/cards_category</item>
         <item>@drawable/chips_category</item>
+        <item>@drawable/components_lists</item>
     </array>
 
 </resources>

@@ -14,38 +14,48 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/item_image"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_centerVertical="true"
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/new_reservation_section"
-                app:backgroundTint="@color/colorAlert"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/white"
-                tools:text="t"/>
+                app:backgroundTint="#888"
+
+            />
 
             <TextView
-                android:id="@+id/item_text"
+                android:id="@+id/item_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/item_image"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="16dp"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 tools:text="test"
             />
+
+            <TextView
+                android:id="@+id/item_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_below="@+id/item_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:maxLines="2"
+                tools:text="test"
+            />
+
 
         </RelativeLayout>
 
         <!--<View-->
-            <!--android:id="@+id/click_area"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:clickable="true"-->
-            <!--android:focusable="true"/>-->
+        <!--android:id="@+id/click_area"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:clickable="true"-->
+        <!--android:focusable="true"/>-->
 
 
     </FrameLayout>
